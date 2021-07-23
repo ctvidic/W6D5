@@ -12,4 +12,8 @@ class CatsController < ApplicationController
             render :index
         end
     end
+
+    def new 
+        render :new 
+    end
 end
