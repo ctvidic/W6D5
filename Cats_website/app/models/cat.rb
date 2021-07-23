@@ -8,10 +8,10 @@ class Cat < ApplicationRecord
     validates :sex, inclusion: SEX 
     validates :birth_date, :color, :name, :sex, :description, presence: true
 
-    
+
 
     def age
         currentTime = Date.today
-        ((currentTime  - Cat.birth_date).to_i)/365
+        ((currentTime  - self.birth_date).to_i)/365
     end
 end

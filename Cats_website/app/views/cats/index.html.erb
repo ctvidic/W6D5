@@ -4,11 +4,8 @@
 <ul>
 <% @cats.each do |cat| %>
     <li>
-        <%= cat.name%>
-        <%= cat.birth_date %>
-        <%= cat.age %>
-        <%= cat.color %>
-        <%= cat.sex %>
-        <%= cat.description %>
+        <a href="cat_url"> <%= cat.name%> </a>
+        
     </li>
+    <% end %>
 </ul>

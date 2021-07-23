@@ -92,3 +92,112 @@ Migrating to CreateCat (20210723174658)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:9
   [1m[36mCat Load (1.0ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+Started GET "/cats" for ::1 at 2021-07-23 14:59:28 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/quinnm/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as */*
+  Parameters: {"comment"=>{"user_id"=>"19", "artwork_id"=>"10", "body"=>"Wow shes cute"}}
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 105ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^:
+  app/views/cats/index.html.erb:18:in `'
+  app/controllers/cats_controller.rb:4:in `index'
+
+Started GET "/cats" for ::1 at 2021-07-23 15:00:17 -0400
+Processing by CatsController#index as */*
+  Parameters: {"comment"=>{"user_id"=>"19", "artwork_id"=>"10", "body"=>"Wow shes cute"}}
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (11.0ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/index.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 844ms (Views: 813.3ms | ActiveRecord: 30.0ms)
+
+
+Started GET "/cats" for ::1 at 2021-07-23 15:01:06 -0400
+Processing by CatsController#index as */*
+  Parameters: {"comment"=>{"user_id"=>"19", "artwork_id"=>"10", "body"=>"Wow shes cute"}}
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (8.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 44570ms (Views: 147.3ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/cats" for ::1 at 2021-07-23 15:01:53 -0400
+Processing by CatsController#index as */*
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 22340ms (Views: 95.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (41.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Create (1.9ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2015-01-20"], ["color", "orange"], ["name", "Linus"], ["sex", "M"], ["description", "Fat Cat"], ["created_at", "2021-07-23 19:02:34.563860"], ["updated_at", "2021-07-23 19:02:34.563860"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+Started GET "/cats" for ::1 at 2021-07-23 15:02:41 -0400
+Processing by CatsController#index as */*
+  [1m[36mCat Load (7.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/cats_controller.rb:4
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (38.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/index.html.erb within layouts/application (166.1ms)
+Completed 500 Internal Server Error in 34451ms (ActiveRecord: 53.7ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<Class:0x00007fade8f21c30>:
+  app/models/cat.rb:15:in `age'
+  app/views/cats/index.html.erb:9:in `block in _app_views_cats_index_html_erb__1809062990545591736_70192517475280'
+  app/views/cats/index.html.erb:5:in `_app_views_cats_index_html_erb__1809062990545591736_70192517475280'
+  app/controllers/cats_controller.rb:5:in `index'
+
+Started GET "/cats" for ::1 at 2021-07-23 15:04:02 -0400
+Processing by CatsController#index as */*
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/cats_controller.rb:4
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (33.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/index.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 19150ms (Views: 96.5ms | ActiveRecord: 65.5ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Create (0.7ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2014-06-20"], ["color", "orange"], ["name", "Linus"], ["sex", "M"], ["description", "Fat Cat"], ["created_at", "2021-07-23 19:07:06.909162"], ["updated_at", "2021-07-23 19:07:06.909162"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2017-01-30"], ["color", "brown"], ["name", "Lucy"], ["sex", "F"], ["description", "Thin Cat"], ["created_at", "2021-07-23 19:07:06.912772"], ["updated_at", "2021-07-23 19:07:06.912772"]]
+  ↳ db/seeds.rb:10
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCat Create (0.3ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2019-01-20"], ["color", "orange"], ["name", "Garfield"], ["sex", "M"], ["description", "Fat Cat: Lasagna"], ["created_at", "2021-07-23 19:07:06.917129"], ["updated_at", "2021-07-23 19:07:06.917129"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mCat Create (0.3ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2011-03-20"], ["color", "grey"], ["name", "Kitty"], ["sex", "F"], ["description", "Catish Cat"], ["created_at", "2021-07-23 19:07:06.920780"], ["updated_at", "2021-07-23 19:07:06.920780"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
