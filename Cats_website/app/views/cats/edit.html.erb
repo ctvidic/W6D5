@@ -1,21 +1,22 @@
 
-<h1> Add Cats </h1>
+<h1> Edit Cats </h1>
 
 <form action = "/cats" method="POST">
     <input type="hidden" name = "_method" value = "patch">
-    <label for="Birthday">cat.birth_date</label>
-    <input id="Birthday" type="date" name="cat[birth_day]">
+
+    <label for="Birthday"> Birthday </label>
+    <input id="Birthday" type="date" name="cat[birth_day]" value="<%= @cat.birth_date %>">
     <br>
     <label for="Name">Name </label>
-    <input id="Name" type="text" name="cat[name]">
+    <input id="Name" type="text" name="cat[name]" value="<%= @cat.name %>">
     <br>
     <label for="Color">Color </label>
     <select id="Color" name="cat[color]">
-        <option disabled selected>-- Please Select --</option>
-        <option value="orange">Orange</option>
-        <option value="black">Black</option>
-        <option value="grey">Grey</option>
-        <option value="brown">Brown</option>
+      
+        <option value="orange" <%= @cat.color == "orange" ? "selected" : "" %> >Orange</option>
+        <option value="black" <%= @cat.color == "black" ? "selected" : "" %> >Black</option>
+        <option value="grey" <%= @cat.color == "grey" ? "selected" : "" %>>Grey</option>
+        <option value="brown" <%= @cat.color == "brown" ? "selected" : "" %>>Brown</option>
     </select>
     <br>
     <p>Sex</p>
