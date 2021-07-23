@@ -525,3 +525,42 @@ Started POST "/cats" for ::1 at 2021-07-23 16:07:41 -0400
 AbstractController::ActionNotFound - The action 'create' could not be found for CatsController:
 
 Started POST "/__better_errors/643778cdc147848a/variables" for ::1 at 2021-07-23 16:07:41 -0400
+Started GET "/cats/" for ::1 at 2021-07-23 16:23:56 -0400
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/christophervidic/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.8ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:5
+  Rendered cats/index.html.erb within layouts/application (68.3ms)
+Completed 200 OK in 408ms (Views: 369.4ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-07-23 16:24:02 -0400
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 101ms (Views: 100.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for ::1 at 2021-07-23 16:24:35 -0400
+
+AbstractController::ActionNotFound - The action 'create' could not be found for CatsController:
+
+Started POST "/__better_errors/0bfb65d22bc48731/variables" for ::1 at 2021-07-23 16:24:36 -0400
+Started GET "/cats/new" for ::1 at 2021-07-23 16:26:00 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/christophervidic/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 283ms (Views: 269.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for ::1 at 2021-07-23 16:26:00 -0400
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 75ms (Views: 74.4ms | ActiveRecord: 0.0ms)
+
+

@@ -1,7 +1,9 @@
+
 <h1> Add Cats </h1>
 
 <form action = "/cats" method="POST">
-    <label for="Birthday">Birthday </label>
+    <input type="hidden" name = "_method" value = "patch">
+    <label for="Birthday">cat.birth_date</label>
     <input id="Birthday" type="date" name="cat[birth_day]">
     <br>
     <label for="Name">Name </label>
